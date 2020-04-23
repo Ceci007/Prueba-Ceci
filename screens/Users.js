@@ -30,6 +30,7 @@ const Users = (props) => {
                 <Text
                   style={styles.text}
                 >{`${userItem.first_name} ${userItem.last_name}`}</Text>
+                <Text style={styles.email}>{userItem.email}</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -42,24 +43,29 @@ const Users = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 50,
+    padding: 20,
   },
   container: {
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    borderBottomColor: "#7C7189",
+    borderBottomColor: "#D2D1CC",
     borderBottomWidth: 1,
   },
   image: {
-    height: 64,
-    width: 64,
+    height: 54,
+    width: 54,
     marginRight: 30,
     marginVertical: 10,
     borderRadius: 50,
   },
   text: {
-    color: "#8A7E99",
+    color: "#2A2928",
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+  email: {
+    color: "#3F3E3D",
   },
 });
 
