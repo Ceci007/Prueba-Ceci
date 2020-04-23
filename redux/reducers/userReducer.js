@@ -27,15 +27,18 @@ const userReducer = (state = defaultState, action) => {
   }
 };
 
-export const fetchUsersAction = () => (dispatch) =>
+export const fetchUsersAction = () => (dispatch) => {
   axios
     .get("https://reqres.in/api/users")
     .then((result) => dispatch(fetchUsersSucceededAction(result.data.data)));
+};
 
-export const fetchUserId = (id) => (dispatch) =>
+export const fetchUserId = (id) => (dispatch) => {
+  dispatch(setSelectedUserAction(null));
   axios
     .get(`https://reqres.in/api/users/${id}`)
     .then((result) => dispatch(setSelectedUserAction(result.data.data)));
+};
 
 export const fetchUsersSucceededAction = (users) => ({
   type: USER_ACTIONS.FETCH_USERS_SUCCEEDED,
